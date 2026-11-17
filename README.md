@@ -12,6 +12,12 @@ Sube el contenido de la carpeta a un repositorio → Settings → Pages → rama
 ## Controles
 A/D o flechas: caminar · E: interactuar · Espacio/Enter: continuar · 1/2/3: decidir · Esc: pausa.
 
+## Capítulo 2 — El peso de la vergüenza
+Se accede desde el botón «Continuar al Capítulo 2» al final del Capítulo 1 (o con «Continuar» si la partida quedó en el capítulo 2).
+Escenas: `Camino` (camino al pueblo y exterior del almacén) y `Almacen` (interior, Ricardo). Flujo: camino → almacén → decisión frente a Ricardo → harina → exterior con la bolsa → decisión de la bolsa → letrero de la fiesta → cierre.
+Decisiones guardadas: `decisions.ricardo` (enfrentar / retirarse / plazo), `decisions.bolsa` (guardar / buscar / dejar) e `items` (bolsa: guardada / buscada / recogida_tras_dudar). `pistas` suma 1 una sola vez si se busca en la bolsa. `pacto` NO cambia.
+Archivos nuevos: `src/data/chapter-02.js`, `src/scenes/{walk-scene,camino-scene,almacen-scene,boot-ch2}.js`. Modificados (mínimo): `main.js`, `index.html`, `core/game-state.js`, `core/dialogue-ui.js`, `scenes/{boot,menu,campo}-scene.js`.
+
 ## Estructura
 `src/core` (estado, diálogos) · `src/scenes` (boot, menú, campo) · `src/data` (narrativa como datos) · `src/systems` (audio, guardado) · `assets/` (carpetas listas para arte y audio reales).
 Se simplificó respecto a la estructura sugerida: no hay `entities/`, `scene-manager`, `input-manager` ni `ui/` separados; los personajes viven en la escena y la UI es DOM. Pueden extraerse al crecer el proyecto.
@@ -24,4 +30,5 @@ pacto, vinculoVieja, orgullo, desconfianza, pistas, quedarse + decisiones y prog
 - Tiles, casa, árbol, herramientas, mesa, fondos con parallax, niebla y partículas: provisionales.
 - Audio: solo viento sintetizado. Pendiente: pisadas, relinchos, madera, música, sonido del Forastero.
 - Tilemap construido por código; pendiente exportarlo desde Tiled si se quiere editar visualmente.
+- Capítulo 2: Ricardo, los vecinos, el pueblo, el interior del almacén, el letrero, la bolsa y el cartel son arte provisional; Lucho, Vieja y el Forastero se reutilizan sin cambios.
 - Fuera de alcance: lluvia (corresponde a capítulos posteriores), finales.

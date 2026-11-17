@@ -5,7 +5,7 @@ export const Dialogue={
     window.addEventListener('keydown',e=>this.key(e));},
   run(lines){return new Promise(res=>{this.q=[...lines];this.res=res;this.active=true;this.el.hidden=false;this.next()})},
   next(){const l=this.q.shift();if(!l){this.active=false;this.el.hidden=true;this.res();return}
-    this.cur=l;this.el.dataset.who=l.who?l.who.toLowerCase():'narra';this.who.textContent=(l.who||'').toUpperCase();this.txt.textContent=l.t;this.ch.innerHTML='';
+    if(l.fx)l.fx();this.cur=l;this.el.dataset.who=l.who?l.who.toLowerCase():'narra';this.who.textContent=(l.who||'').toUpperCase();this.txt.textContent=l.t;this.ch.innerHTML='';
     this.waiting=!!l.choices;
     if(l.choices)l.choices.forEach((c,i)=>{const b=document.createElement('button');b.textContent=(i+1)+'. '+c.t;b.onclick=e=>{e.stopPropagation();this.pick(c)};this.ch.appendChild(b)})},
   pick(c){if(c.fx)c.fx();if(c.after)this.q.unshift(...c.after);this.ch.innerHTML='';this.waiting=false;this.next()},

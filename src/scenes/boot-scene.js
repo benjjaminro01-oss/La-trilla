@@ -3,6 +3,7 @@ let seed=7;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647};
 const R=(c,col,x,y,w,h)=>{c.fillStyle=col;c.fillRect(x|0,y|0,w,h)};
 const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
 const mix=(a,b,t)=>{const A=hex(a),B=hex(b);return'rgb('+A.map((v,i)=>Math.round(v+(B[i]-v)*t)).join(',')+')'};
+import {makeChapter2Textures} from './boot-ch2.js';
 export class BootScene extends Phaser.Scene{
   constructor(){super('Boot')}
   tex(k,w,h,f){const t=this.textures.createCanvas(k,w,h);f(t.getContext(),w,h);t.refresh();return t}
@@ -54,6 +55,7 @@ export class BootScene extends Phaser.Scene{
     const A=(key,tex,fr,rate,rep=-1)=>this.anims.create({key,frames:fr.map(f=>({key:tex,frame:f})),frameRate:rate,repeat:rep});
     A('lucho_idle','lucho',[0,1],2);A('lucho_walk','lucho',[2,3,4,5],8);A('lucho_act','lucho',[6,7],3,2);
     A('vieja_idle','vieja',[0,1],1.5);A('vieja_neigh','vieja',[2,3,2,3],4,1);A('fora_idle','forastero',[0,1],1);
+    makeChapter2Textures(this);
     this.scene.start('Menu');
   }
 }

@@ -3,6 +3,7 @@ import {State} from '../core/game-state.js';
 import {Dialogue} from '../core/dialogue-ui.js';
 import {Audio} from '../systems/audio-manager.js';
 import {INTRO,ITEMS,FORASTERO} from '../data/chapter-01.js';
+import {setEnd} from '../data/chapter-02.js';
 export class CampoScene extends Phaser.Scene{
   constructor(){super('Campo')}
   create(){
@@ -38,6 +39,7 @@ export class CampoScene extends Phaser.Scene{
     document.getElementById('b-resume').onclick=()=>this.togglePause();
     document.getElementById('b-menu').onclick=()=>{document.getElementById('pause').hidden=true;this.scene.start('Menu')};
     document.getElementById('b-again').onclick=()=>{document.getElementById('end').hidden=true;State.reset();this.scene.restart()};
+    document.getElementById('b-next').onclick=()=>{document.getElementById('end').hidden=true;State.startChapter(2);this.scene.start('Camino')};setEnd(1);
     Audio.wind(.12);
     if(!State.seen('intro')){this.busy=true;this.time.delayedCall(1400,async()=>{await Dialogue.run(INTRO);State.visit('intro');this.busy=false})}
   }
