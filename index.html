@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1A1918"><meta name="color-scheme" content="dark">
+<title>La Trilla — El precio de una decisión</title>
+<meta name="description" content="Universo transmedia de La Trilla: cortometraje, libro ilustrado, videojuego y audiolibro ambientados en Villa Alegre, Región del Maule, 2018.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--tierra:#3D2314;--adobe:#1A1918;--niebla:#F5F2F0;--trigo:#C89D54;--carbon:#2C2A29;--serif:"Playfair Display",Georgia,serif;--sans:Inter,system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{background:var(--adobe);color:var(--niebla);font:400 1rem/1.7 var(--sans);overflow-x:hidden}
+a{color:inherit}img{display:block;max-width:100%}
+.wrap{width:min(1080px,92vw);margin:auto}
+nav{position:fixed;inset:0 0 auto;z-index:20;background:rgba(26,25,24,.88);backdrop-filter:blur(6px);border-bottom:1px solid rgba(200,157,84,.25);padding-top:env(safe-area-inset-top,0px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:3.6rem}
+.logo{font:700 1.15rem var(--serif);color:var(--trigo);letter-spacing:.1em;text-decoration:none}
+nav ul{display:flex;gap:1.3rem;list-style:none;padding:0;font-size:.85rem;overflow-x:auto}
+nav li a{text-decoration:none;opacity:.8;white-space:nowrap}nav li a:hover{opacity:1;color:var(--trigo)}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;text-align:center;padding:6rem 0 0;overflow:hidden;
+ background:radial-gradient(circle at 78% 18%,rgba(245,242,240,.22) 0 2%,rgba(245,242,240,.06) 7%,transparent 20%),linear-gradient(180deg,#0d0d0e 0%,#1A1918 55%,#3D2314 100%)}
+.hero h1{font:700 clamp(3.2rem,14vw,7rem)/1 var(--serif);color:var(--trigo);letter-spacing:.08em;text-shadow:0 0 40px rgba(200,157,84,.25)}
+.sub{font:italic 400 clamp(1.1rem,3.5vw,1.6rem) var(--serif);margin-top:.6rem}
+.tag{opacity:.75;margin-top:.4rem}
+.cta{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin:1.8rem 0 2rem}
+.btn{display:inline-block;font:500 .95rem var(--sans);text-decoration:none;color:var(--niebla);background:rgba(61,35,20,.85);border:1px solid var(--trigo);padding:.75rem 1.3rem;cursor:pointer;transition:background .3s,color .3s}
+.btn:hover,.btn:focus-visible{background:var(--trigo);color:var(--adobe);outline:none}
+.btn.off{opacity:.5;pointer-events:none;border-style:dashed}
+.scene{position:relative;margin-top:auto;height:clamp(150px,26vw,230px)}
+.hills{position:absolute;inset:auto 0 0;height:100%;background:linear-gradient(#1d1b1a,#1d1b1a) bottom/100% 30% no-repeat,radial-gradient(ellipse 60% 100% at 25% 100%,#242120 60%,transparent 61%),radial-gradient(ellipse 70% 90% at 75% 100%,#202020 60%,transparent 61%)}
+.ground{position:absolute;inset:auto 0 0;height:28px;background:#3D2314;border-top:4px solid #5b4a2a}
+.cast{position:absolute;inset:auto 0 24px;display:flex;justify-content:center;align-items:flex-end;gap:clamp(.8rem,8vw,6rem)}
+.cast img{image-rendering:pixelated;height:clamp(64px,11vw,110px);width:auto}
+.cast img.v{height:clamp(46px,8vw,78px)}.cast .f{opacity:.0;animation:aparece 4s 1.2s forwards}
+@keyframes aparece{to{opacity:1}}
+.mist{position:absolute;left:-30%;width:160%;height:60%;bottom:0;background:radial-gradient(ellipse,rgba(245,242,240,.2),transparent 68%);filter:blur(24px);animation:deriva 60s linear infinite alternate}
+.mist.b{bottom:30%;opacity:.6;animation-duration:85s;animation-direction:alternate-reverse}
+@keyframes deriva{from{transform:translateX(-8%)}to{transform:translateX(8%)}}
+/* módulos */
+section.mod{padding:5.5rem 0;border-top:1px solid rgba(200,157,84,.15)}
+section.mod:nth-of-type(even){background:linear-gradient(180deg,rgba(61,35,20,.28),transparent)}
+.grid{display:grid;grid-template-columns:1fr 1.25fr;gap:2.5rem;align-items:center}
+.grid.rev{grid-template-columns:1.25fr 1fr}.grid.rev .txt{order:2}
+.num{font:600 .8rem var(--sans);letter-spacing:.2em;color:var(--trigo)}
+h2{font:700 clamp(1.8rem,5vw,2.8rem)/1.15 var(--serif);margin:.4rem 0 1rem}
+.txt p{opacity:.85;margin-bottom:1rem;max-width:52ch}
+.meta{font-size:.85rem;opacity:.6}
+.frame{position:relative;aspect-ratio:16/9;background:#0b0a0a;border:1px solid rgba(200,157,84,.4);box-shadow:0 20px 60px rgba(0,0,0,.5);overflow:hidden}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.poster{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;text-align:center;padding:1rem;border:0;width:100%;cursor:pointer;color:inherit;font:inherit;
+ background:radial-gradient(circle at 70% 20%,rgba(245,242,240,.18),transparent 25%),linear-gradient(180deg,#14181b,#2a3236 60%,#3a3a35)}
+.poster .play{width:4.2rem;height:4.2rem;border:2px solid var(--trigo);border-radius:50%;display:grid;place-items:center;font-size:1.5rem;color:var(--trigo);padding-left:.2rem;transition:transform .3s,background .3s}
+.poster:hover .play{transform:scale(1.08);background:rgba(200,157,84,.15)}
+.poster b{font:700 1.4rem var(--serif);letter-spacing:.06em;color:var(--trigo)}.poster small{opacity:.7}
+.book{perspective:900px;display:grid;place-items:center}
+.cover{width:min(250px,60vw);aspect-ratio:3/4;background:linear-gradient(135deg,#4a2c18,#25140a);border:1px solid var(--trigo);border-left:12px solid #2a1308;transform:rotateY(-18deg);box-shadow:20px 20px 50px rgba(0,0,0,.55);display:flex;flex-direction:column;justify-content:space-between;padding:1.4rem 1.1rem;text-align:center;transition:transform .5s}
+.cover:hover{transform:rotateY(-6deg)}
+.cover h3{font:700 2rem/1 var(--serif);color:var(--trigo);letter-spacing:.06em}.cover i{font:italic .85rem var(--serif);opacity:.8}
+.cover .wheat{height:70px;background:repeating-linear-gradient(90deg,transparent 0 6px,rgba(200,157,84,.55) 6px 8px);-webkit-mask:linear-gradient(0deg,#000,transparent);mask:linear-gradient(0deg,#000,transparent)}
+.chars{display:flex;gap:1.6rem;align-items:flex-end;justify-content:center;padding:2rem;background:linear-gradient(180deg,#14181b,#2a3236 60%,#3D2314);border:1px solid rgba(200,157,84,.4);min-height:230px}
+.chars img{image-rendering:pixelated;height:100px;width:auto}.chars img.v{height:66px}
+.keys{display:flex;gap:.5rem;flex-wrap:wrap;margin:0 0 1.2rem;padding:0;list-style:none;font-size:.8rem}
+.keys li{border:1px solid rgba(245,242,240,.3);padding:.2rem .6rem}
+.embed{background:#0b0a0a;border:1px solid rgba(200,157,84,.4);min-height:232px;display:grid;place-items:center;text-align:center;padding:1rem}
+.embed iframe{width:100%;height:232px;border:0}
+.soon{opacity:.7;font:italic 1.05rem var(--serif)}
+.part{text-align:center;padding:5rem 0}.part p{max-width:56ch;margin:0 auto 1.4rem;opacity:.85}
+footer{padding:3rem 0 2.5rem;border-top:1px solid rgba(200,157,84,.25);font-size:.85rem;opacity:.75}
+footer .wrap{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+footer h4{font:600 .75rem var(--sans);letter-spacing:.16em;color:var(--trigo);margin-bottom:.5rem}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .9s,transform .9s}.rv.in{opacity:1;transform:none}
+@media(max-width:780px){.grid,.grid.rev{grid-template-columns:1fr}.grid.rev .txt{order:0}nav ul{gap:.9rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.cast .f,.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style></head>
+<body>
+<nav><div class="wrap"><a class="logo" href="#top">LA TRILLA</a>
+<ul><li><a href="#corto">Cortometraje</a></li><li><a href="#libro">Libro ilustrado</a></li><li><a href="#juego">Juego</a></li><li><a href="#audio">Audiolibro</a></li></ul></div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+<h1>LA TRILLA</h1><p class="sub">El precio de una decisión</p><p class="tag">Todo tiene su precio. Hasta el respeto.</p>
+<div class="cta"><a class="btn" href="#corto">Ver el cortometraje</a><a class="btn" href="#libro">Leer el libro</a><a class="btn" data-link="juego" href="#juego">Jugar</a><a class="btn" href="#audio">Escuchar</a></div></div>
+<div class="scene" aria-hidden="true"><div class="hills"></div><div class="mist b"></div>
+<div class="cast"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAADACAYAAADryOpPAAACQklEQVR42u3du0oDQRiA0VmxFQQJeCmsDUIeI621nZ1gqY+hpWBnZy12eQgLQWKpATVCEARbQV9AgkJ2d/6dc0oLs5v9MsMye0kJAACA5lTRd6C/tfodefvHLx+hj8GS3xACQkAICAGBgBAQAkJAICAEhIAQEAgIASEgBAQpZXhFYvQrDOuW2xWMRiAEhIAQEAICASEgBISAQEAIiIyFfzrH6Oww9NrZ8PjC0zkwhYGAEBACQkAgIASEgBAQCAgBISAEBAJCQAiI+JZL2+GD0+tf/355stfK/zECYQoDASEgBERh3BfWMveFYQoDASEgBERhOrsWdvf+ldX2DNa6+VUbgRAQAkJACAiin4Ud7Q+Lel/Yf/f3/GrkfWGYwkBACAgB4SysRTe3jyG2c/JkBAIBISAEhIAgNXBfWGlrW7mpe+3MCISAEBACQkAgIASEgBAQCAgBISAEBAJCQAgIAYGAEBACQkAICASEgBAQAgIBISAEhIBAQAgIASEgEBALkt2T6rd7n47KHJPZihEIUxgICAEhIJyFdfgsAyMQAkJACAgEhIAQEAICASEgBERYVW4b5C3P89X9FmYjEAJCQAgIBETNsrsi8Xk6c1SMQAgIBISAEBDdVUXfgd3+zkLWzu7HD1WEzzUCYQoDASEgBISAEBAICAEhIAQEAkJACAgBgYAQEAJCQCAgBISAEBAC8hUgIASEgBAQCIgGhX86x+bGeq1Ptn+dvlU5fa4RCFMYCAgBISAEhIBAQAgIASEg+LMfK19ENBuvEgIAAAAASUVORK5CYII=" alt=""><img class="v" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAACQCAYAAAA2oebIAAACGklEQVR42u3dIU9CURiAYa4jYZCgFDY3ZyPozFaS2eSP8MfwI0hmk9XsNNCcmxsFCRi0XoMVxu7gcO93eJ7I2B077N3HDnfntloAAAAAAJBKYQnYB4N+t6zy/sl0EaKNA18txCVgEDAgYEDAIGBAwICAAQGDgAEBA5tyLzSNkPpe5fubizLy+owe3woTGPyEBgQMCBgEDITUtgRE1LRd5YeX2dLXb696JjAgYBAwIGBAwLDf7ELDFqTebTaBwU9oQMCAgEHAgIABAQMCBgEDAgYEDAgYBAwIGBAwCBgQMLBD4U/kiP7UOf49vX426vOsehqgCQwIGBAwCBgQMFBRbbvQg37X7jGYwCBgQMCAgAEBQ+48nXCNj6/fpa+fnXRcfwfXxwQGAQMCBgQMCBiCswtNIwwvTy2CCQwCBgQMCBgQMOTILjRZiXKeswkMCBgEDAgYEDAIGBAwIGBAwCBgQMDAxtwLvUbq841dHxMYBAwIGBAwIGDIWra70PPvH99uxo6PDi2CCQwCBgQMCBgEDEQQfhd61TnAd9fnZZXrjJ/fK50nnPr6UdS1zv5lMIFBwICAAQGDgAEBAwIGBAwCBgQMCBgEbAlAwICAAQGDgAEBA8nUdiLHZLooLD+YwCBgQMCAgAEBg4ABAQMCBgQMAgYEDAgYBAwIGBAwIGAQMCBgQMCAgEHAgIABAYOAAQEDAgYEDAIGBAxswR8PLkJo1fnEKAAAAABJRU5ErkJggg==" alt=""><img class="f" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAADYCAYAAAAETWq5AAACUUlEQVR42u3dMU/CQBiA4TvjRCgzZXMwGlc3R3+4o5ur0Ti4UWZqXOEHqMMlluPrPc9IGmjLm7tcSktOwXXd6hB5/8dxnyPv/0UCASEgBISAQEAICAEhIBAQAkJACAgEhIAQEAICASEgBISAEBAICAEhIAQEAkJACIgZC/NkiOhP4SgV5akdRiAEhIAQEAKCua7CSg2fr2e1auuv7mZ5ro1ACAgBISAEBAJCQAgIAYGAEBACQkAgIASEgBAQpJRSumztgO8fHn99/eX5qcr7GIEwhYGAEBACojHuCzsR94WBgBAQAkJAICAEhIAQEAICAXFyYX6RuOnXoZ9UX7r/22HnSfWYwkBACAgBMUdhfiU39Srs4/2taPvrm9tJj9cqDFMYCAgBISBmqtq1sOjXts7t/NRatRmBEBACQkAICASEgBAQAgIBISAEhIBAQAgIASEgSCk1+H9hf5n6Pi8jEAgIASEgBAQCQkAICAEhIBAQAkJACAgEhIAQEAICASEgBISAQEAICAEhIAQEAkJACAgBgYAQEAJCQCAgBISAEBAICAEhIAQEAkJACAgBISAQEAJCQAgIBMTEqv1r8/j1XbR9t1w09cWUnh8jEKYwBAQCQkAICAGBgBAQAkJA8EO9a2HjPpds3y0Xh5a+mNLzYwTCFIaAQEAICAEhIBAQAkJACAgEhIAQEAICASEgBISAEBAICAEhIJqRox/Apl//y/1i22GXI3yuEQhTGAgIASEgBISAQEAICAEhIBAQAkJACAgEhIAQEAICASEgBISAaN4RWLM+cKX6jL0AAAAASUVORK5CYII=" alt=""></div>
+<div class="ground"></div><div class="mist"></div></div></header>
+
+<main>
+<section class="mod" id="corto"><div class="wrap grid"><div class="txt rv"><span class="num">01 · CORTOMETRAJE</span><h2>Mira la historia completa</h2>
+<p>En Villa Alegre, en junio de 2018, Lucho, un campesino arruinado y humillado por el pueblo, acepta la ayuda de un misterioso Forastero que devuelve la fertilidad a su tierra y el respeto de los demás. A cambio, pierde la capacidad de sentir.</p>
+<p class="meta">Drama folclórico · terror psicológico · Región del Maule, Chile</p></div>
+<div class="rv"><div class="frame" id="video"><button class="poster" type="button" id="play"><span class="play">▶</span><b>LA TRILLA</b><small id="video-note">Ver el cortometraje</small></button></div></div></div></section>
+
+<section class="mod" id="libro"><div class="wrap grid rev"><div class="book rv"><div class="cover"><i>Archivos del Maule</i><h3>LA<br>TRILLA</h3><div class="wheat"></div></div></div>
+<div class="txt rv"><span class="num">02 · LIBRO ILUSTRADO</span><h2>Entra al lore de Villa Alegre</h2>
+<p>Prosa poética rústica, ilustraciones a tinta, bosquejos de arte, cartas de la época y leyendas del campo maulino. Un fanzine digital que profundiza en el pasado de Lucho y en el origen del Forastero.</p>
+<a class="btn" data-link="libro" href="#libro" target="_blank" rel="noopener">Leer el libro</a></div></div></section>
+
+<section class="mod" id="juego"><div class="wrap grid"><div class="txt rv"><span class="num">03 · VIDEOJUEGO</span><h2>Decide tú qué está dispuesto a perder Lucho</h2>
+<p>Aventura narrativa 2D en Pixel Art: recorre el campo y el pueblo, habla con Vieja, enfrenta a Ricardo y descubre qué te ofrece el Forastero. Tus decisiones cambian la historia y conducen a uno de cuatro finales.</p>
+<ul class="keys"><li>A / D · caminar</li><li>E · interactuar</li><li>Espacio · continuar</li><li>1 2 3 · decidir</li></ul>
+<a class="btn" data-link="juego" href="#juego" target="_blank" rel="noopener">Jugar ahora</a></div>
+<div class="chars rv" aria-hidden="true"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAADACAYAAADryOpPAAACQklEQVR42u3du0oDQRiA0VmxFQQJeCmsDUIeI621nZ1gqY+hpWBnZy12eQgLQWKpATVCEARbQV9AgkJ2d/6dc0oLs5v9MsMye0kJAACA5lTRd6C/tfodefvHLx+hj8GS3xACQkAICAGBgBAQAkJAICAEhIAQEAgIASEgBAQpZXhFYvQrDOuW2xWMRiAEhIAQEAICASEgBISAQEAIiIyFfzrH6Oww9NrZ8PjC0zkwhYGAEBACQkAgIASEgBAQCAgBISAEBAJCQAiI+JZL2+GD0+tf/355stfK/zECYQoDASEgBERh3BfWMveFYQoDASEgBERhOrsWdvf+ldX2DNa6+VUbgRAQAkJACAiin4Ud7Q+Lel/Yf/f3/GrkfWGYwkBACAgB4SysRTe3jyG2c/JkBAIBISAEhIAgNXBfWGlrW7mpe+3MCISAEBACQkAgIASEgBAQCAgBISAEBAJCQAgIAYGAEBACQkAICASEgBAQAgIBISAEhIBAQAgIASEgEBALkt2T6rd7n47KHJPZihEIUxgICAEhIJyFdfgsAyMQAkJACAgEhIAQEAICASEgBERYVW4b5C3P89X9FmYjEAJCQAgIBETNsrsi8Xk6c1SMQAgIBISAEBDdVUXfgd3+zkLWzu7HD1WEzzUCYQoDASEgBISAEBAICAEhIAQEAkJACAgBgYAQEAJCQCAgBISAEBAC8hUgIASEgBAQCIgGhX86x+bGeq1Ptn+dvlU5fa4RCFMYCAgBISAEhIBAQAgIASEg+LMfK19ENBuvEgIAAAAASUVORK5CYII=" alt=""><img class="v" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAACQCAYAAAA2oebIAAACGklEQVR42u3dIU9CURiAYa4jYZCgFDY3ZyPozFaS2eSP8MfwI0hmk9XsNNCcmxsFCRi0XoMVxu7gcO93eJ7I2B077N3HDnfntloAAAAAAJBKYQnYB4N+t6zy/sl0EaKNA18txCVgEDAgYEDAIGBAwICAAQGDgAEBA5tyLzSNkPpe5fubizLy+owe3woTGPyEBgQMCBgEDITUtgRE1LRd5YeX2dLXb696JjAgYBAwIGBAwLDf7ELDFqTebTaBwU9oQMCAgEHAgIABAQMCBgEDAgYEDAgYBAwIGBAwCBgQMLBD4U/kiP7UOf49vX426vOsehqgCQwIGBAwCBgQMFBRbbvQg37X7jGYwCBgQMCAgAEBQ+48nXCNj6/fpa+fnXRcfwfXxwQGAQMCBgQMCBiCswtNIwwvTy2CCQwCBgQMCBgQMOTILjRZiXKeswkMCBgEDAgYEDAIGBAwIGBAwCBgQMDAxtwLvUbq841dHxMYBAwIGBAwIGDIWra70PPvH99uxo6PDi2CCQwCBgQMCBgEDEQQfhd61TnAd9fnZZXrjJ/fK50nnPr6UdS1zv5lMIFBwICAAQGDgAEBAwIGBAwCBgQMCBgEbAlAwICAAQGDgAEBA8nUdiLHZLooLD+YwCBgQMCAgAEBg4ABAQMCBgQMAgYEDAgYBAwIGBAwIGAQMCBgQMCAgEHAgIABAYOAAQEDAgYEDAIGBAxswR8PLkJo1fnEKAAAAABJRU5ErkJggg==" alt=""><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAADYCAYAAAAETWq5AAACUUlEQVR42u3dMU/CQBiA4TvjRCgzZXMwGlc3R3+4o5ur0Ti4UWZqXOEHqMMlluPrPc9IGmjLm7tcSktOwXXd6hB5/8dxnyPv/0UCASEgBISAQEAICAEhIBAQAkJACAgEhIAQEAICASEgBISAEBAICAEhIAQEAkJACIgZC/NkiOhP4SgV5akdRiAEhIAQEAKCua7CSg2fr2e1auuv7mZ5ro1ACAgBISAEBAJCQAgIAYGAEBACQkAgIASEgBAQpJRSumztgO8fHn99/eX5qcr7GIEwhYGAEBACojHuCzsR94WBgBAQAkJAICAEhIAQEAICAXFyYX6RuOnXoZ9UX7r/22HnSfWYwkBACAgBMUdhfiU39Srs4/2taPvrm9tJj9cqDFMYCAgBISBmqtq1sOjXts7t/NRatRmBEBACQkAICASEgBAQAgIBISAEhIBAQAgIASEgSCk1+H9hf5n6Pi8jEAgIASEgBAQCQkAICAEhIBAQAkJACAgEhIAQEAICASEgBISAQEAICAEhIAQEAkJACAgBgYAQEAJCQCAgBISAEBAICAEhIAQEAkJACAgBISAQEAJCQAgIBMTEqv1r8/j1XbR9t1w09cWUnh8jEKYwBAQCQkAICAGBgBAQAkJA8EO9a2HjPpds3y0Xh5a+mNLzYwTCFIaAQEAICAEhIBAQAkJACAgEhIAQEAICASEgBISAEBAICAEhIJqRox/Apl//y/1i22GXI3yuEQhTGAgIASEgBISAQEAICAEhIBAQAkJACAgEhIAQEAICASEgBISAaN4RWLM+cKX6jL0AAAAASUVORK5CYII=" alt=""></div></div></section>
+
+<section class="mod" id="audio"><div class="wrap grid rev"><div class="embed rv" id="audio-box"><p class="soon">Audiolibro próximamente</p></div>
+<div class="txt rv"><span class="num">04 · AUDIOLIBRO</span><h2>Escucha lo que Lucho piensa</h2>
+<p>Un relato inmersivo de unos diez minutos con voces en off, diseño sonoro binaural y guitarrón chileno. Explora los pensamientos de Lucho antes del pacto. Recomendado con audífonos.</p>
+<a class="btn" data-link="spotify" href="#audio" target="_blank" rel="noopener">Abrir en Spotify</a></div></div></section>
+
+<section class="part"><div class="wrap rv"><span class="num">CUENTA TU CAMPO</span><h2>¿Tu abuelo también tenía una historia?</h2>
+<p>Envíanos una nota de voz o un relato corto con los mitos rurales que viviste o escuchaste en el campo chileno. Las mejores historias se transformarán en mini audiolibros ilustrados.</p>
+<a class="btn" data-link="whatsapp" href="#" target="_blank" rel="noopener">Participar por WhatsApp</a></div></section>
+</main>
+
+<footer><div class="wrap"><div><h4>LA TRILLA</h4>Proyecto Transmedia · Santo Tomás, Comunicación Audiovisual Digital · 2026</div>
+<div><h4>EQUIPO</h4>Alonso Ubilla · Benjamín Rojas · Benjamín Ramírez · Edison Sepúlveda · Aracely Contreras</div>
+<div><h4>ELENCO</h4>Héctor Fuentes y Sergio Astudillo</div></div></footer>
+
+<script>
+/* ===== CONFIGURACIÓN: pega aquí tus enlaces reales. Lo que quede vacío se muestra como «próximamente». ===== */
+const LINKS={
+  juego:'jugar.html',
+  youtubeId:'',        // ej. 'dQw4w9WgXcQ' (el código que aparece tras v= en el enlace de YouTube)
+  libro:'',            // enlace público de Issuu o FlippingBook
+  spotify:'',          // enlace del audiolibro en Spotify, ej. https://open.spotify.com/episode/XXXX
+  whatsapp:''          // enlace wa.link/... o https://wa.me/569XXXXXXXX
+};
+const $=s=>document.querySelector(s);
+document.querySelectorAll('[data-link]').forEach(a=>{const k=a.dataset.link,u=k==='spotify'||k==='libro'||k==='whatsapp'||k==='juego'?LINKS[k]:'';if(u)a.href=u;else if(k!=='juego'){a.classList.add('off');a.textContent+=' · próximamente'}});
+const play=$('#play');
+if(LINKS.youtubeId){play.onclick=()=>{$('#video').innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+encodeURIComponent(LINKS.youtubeId)+'?autoplay=1&rel=0" title="La Trilla — cortometraje" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>'}}
+else{$('#video-note').textContent='Estreno próximamente';play.style.cursor='default'}
+if(LINKS.spotify){const m=LINKS.spotify.match(/open\.spotify\.com\/(?:intl-[a-z]+\/)?(episode|show|track|album|playlist)\/([A-Za-z0-9]+)/);
+  if(m)$('#audio-box').innerHTML='<iframe src="https://open.spotify.com/embed/'+m[1]+'/'+m[2]+'" title="Audiolibro La Trilla" allow="encrypted-media" loading="lazy"></iframe>'}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body></html>
