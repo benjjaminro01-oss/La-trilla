@@ -1,0 +1,17 @@
+:root{--tierra:#3D2314;--adobe:#1A1918;--niebla:#F5F2F0;--trigo:#C89D54;--carbon:#2C2A29}
+*{box-sizing:border-box;margin:0}html,body{height:100%;background:#000;color:var(--niebla);font-family:Inter,system-ui,sans-serif;overflow:hidden}
+#game{position:fixed;inset:0}#game canvas{image-rendering:pixelated}
+section{position:fixed;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.9rem;text-align:center;padding:1.5rem;background:rgba(10,9,9,.55)}
+section[hidden],#dlg[hidden]{display:none}
+#end,#pause{background:rgba(5,5,5,.88)}
+h1{font:700 clamp(3rem,12vw,6rem)/1 "Playfair Display",Georgia,serif;color:var(--trigo);letter-spacing:.08em}
+h2{font:700 clamp(1.8rem,6vw,3rem) "Playfair Display",Georgia,serif}
+.sub{font:italic 1.2rem "Playfair Display",Georgia,serif}.tag{opacity:.75}.ctl{position:absolute;bottom:1.2rem;font-size:.8rem;opacity:.6;max-width:90vw}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center;margin-top:1rem}
+button{font:500 1rem Inter,sans-serif;color:var(--niebla);background:var(--tierra);border:2px solid var(--trigo);padding:.8rem 1.6rem;cursor:pointer}
+button:hover,button:focus-visible{background:var(--trigo);color:var(--adobe);outline:none}
+#dlg{position:fixed;z-index:9;left:50%;bottom:4vh;transform:translateX(-50%);width:min(720px,94vw);padding:1rem 1.2rem;background:rgba(26,25,24,.92);border:2px solid var(--carbon);border-left:4px solid var(--trigo);cursor:pointer}
+#dlg[data-who=forastero]{border-left-color:var(--niebla)}#d-who{font:600 .75rem Inter;letter-spacing:.1em;color:var(--trigo);min-height:1rem;margin-bottom:.4rem}
+#d-txt{font:400 clamp(1rem,2.6vw,1.2rem)/1.6 "Playfair Display",Georgia,serif}#dlg[data-who=narra] #d-txt{font-style:italic;opacity:.88}
+#d-ch{display:flex;flex-direction:column;gap:.5rem;margin-top:.8rem}#d-ch button{text-align:left;padding:.6rem 1rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
